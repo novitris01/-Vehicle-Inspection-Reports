@@ -1,7 +1,15 @@
-# Vehicle-Inspection-Reports
- Vehicle Inspection Reports Pipeline
+Future Improvements:
 
-Project Purpose:
-This project aims to create an analytics dashboard for a vehicle fleet inspection agency. The dashboard will show insights into how vehicle inspections are conducted among different client organizations. Instead of directly accessing the client's vehicle inspection tracking database (due to access restrictions and resource limitations), we will work with monthly dumps of vehicle inspection report (VIR) records. These dumps contain enough information to infer details about the vehicles being inspected and the client organizations that own them.
+- Slowly Changing Dimension Type 2 (SCD Type 2) for dim_org:
+If there is any need to track the historal changes in org names, implementing SCD Type 2 for the org dimension might be beneficial.
+For instance, adding like "ValidFrom" and "ValidTo" field. 
+This allows us to maintain historical records while keeping track of changes to org attributes over time.  Since there is no specific info related to this in the task and it doesn't seem important to track org name changes, I went with simple approach (Type 1).
 
-Our main objective is to process these dumps and store the data separately so that we can answer important questions about vehicle distribution, inspection patterns, and pass rates for each client organization. This information will help the agency make informed decisions and gain a better understanding of inspection trends across its clients.
+- Adding vehicle Dimension (if needed): 
+Currently, the vehicle information is stored in the fact table. 
+Since vehicle doesn't seem to have other info other that vehicle id, I keep this simple by storing in the fact table. If in the future it has name, or other info, creating separate dimension might be beneficial
+to maintain data integrity and reduces redundancy.
+
+Additional Notes:
+
+The provided query is designed for MS SQL Server.
