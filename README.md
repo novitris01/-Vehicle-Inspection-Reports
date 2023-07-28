@@ -1,4 +1,10 @@
-Future Improvements:
+VehicleInsight Analytics
+
+Welcome to VehicleInsight Analytics! We partner with a vehicle fleet inspection agency to create an analytics dashboard revealing insightful patterns in vehicle inspections among client organizations. Using Python, psycopg, and ETL projects, we process monthly dumps of vehicle inspection report (VIR) records. This allows us to answer vital questions about vehicle ownership, inspections, and pass rates. 
+
+
+Future Improvements for implementation:
+=======================================
 
 - Slowly Changing Dimension Type 2 (SCD Type 2) for dim_org:
 If there is any need to track the historal changes in org names, implementing SCD Type 2 for the org dimension might be beneficial.
